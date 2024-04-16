@@ -24,7 +24,7 @@ Silakan **fork** dulu project ini di **REPOSITORY yang teman-teman punya** 
 Clone project dari repo yang teman-teman punya
 
 ```
-git clone https://github.com/{username github teman-teman}/laravel-portfolio-project.git
+git clone https://github.com/{username github teman-teman}/biodata-mahasiswa.git
 cd laravel-portfolio-project
 ```
 

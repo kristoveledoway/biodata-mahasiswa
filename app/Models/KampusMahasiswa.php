@@ -12,6 +12,7 @@ class KampusMahasiswa extends Model
     protected $fillable = [
         "nama_kampus",
         "fakultas",
-        "jurusan"
+        "jurusan",
+        "semester",
     ];
 }

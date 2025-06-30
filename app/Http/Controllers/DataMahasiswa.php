@@ -12,12 +12,12 @@ class DataMahasiswa extends Controller
     public function index(): View
     {
         $dms = BiodataMahasiswa::paginate(10);
-        return view("data_mahasiswa.index", compact("dms"));
+        return view("admin.data_mahasiswa.index", compact("dms"));
     }
 
     public function create(): View
     {
-        return view("data_mahasiswa.create");
+        return view("admin.data_mahasiswa.create");
     }
 
     public function store(Request $request): RedirectResponse
@@ -46,7 +46,7 @@ class DataMahasiswa extends Controller
     public function edit(string $id): View
     {
         $dms = BiodataMahasiswa::findOrFail($id);
-        return view("data_mahasiswa.edit", compact("dms"));
+        return view("admin.data_mahasiswa.edit", compact("dms"));
     }
 
     public function update(Request $request, string $id): RedirectResponse

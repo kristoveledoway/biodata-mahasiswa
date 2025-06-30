@@ -12,12 +12,12 @@ class DataAsrama extends Controller
     public function index(): View
     {
         $das = AsramaMahasiswa::paginate(10);
-        return view("data_asrama.index", compact("das"));
+        return view("admin.data_asrama.index", compact("das"));
     }
 
     public function create(): View
     {
-        return view("data_asrama.create");
+        return view("admin.data_asrama.create");
     }
 
     public function store(Request $request): RedirectResponse
@@ -40,7 +40,7 @@ class DataAsrama extends Controller
     public function edit(string $id): View
     {
         $das = AsramaMahasiswa::findOrFail($id);
-        return view("data_asrama.edit", compact("das"));
+        return view("admin.data_asrama.edit", compact("das"));
     }
 
     public function update(Request $request, string $id): RedirectResponse

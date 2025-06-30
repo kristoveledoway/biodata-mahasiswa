@@ -12,26 +12,28 @@ class DataKampus extends Controller
     public function index(): View
     {
         $dks = KampusMahasiswa::paginate(10);
-        return view("data_kampus.index", compact("dks"));
+        return view("admin.data_kampus.index", compact("dks"));
     }
 
     public function create(): View
     {
-        return view("data_kampus.create");
+        return view("admin.data_kampus.create");
     }
 
     public function store(Request $request): RedirectResponse
     {
         $request->validate([
-            "nama_kampus"=> "required",
-            "fakultas"=> "required",
-            "jurusan"=> "required",
+            "nama_kampus"   => "required",
+            "fakultas"      => "required",
+            "jurusan"       => "required",
+            "semester"      => "required",
         ]);
 
         KampusMahasiswa::create([
-            "nama_kampus"=> $request->nama_kampus,
-            "fakultas"=> $request->fakultas,
-            "jurusan"=> $request->jurusan,
+            "nama_kampus"   => $request->nama_kampus,
+            "fakultas"      => $request->fakultas,
+            "jurusan"       => $request->jurusan,
+            "semester"      => $request->semester,
         ]);
         return redirect()->route("data_kampus.index")->with("success","Data berhasil ditambahkan!");
     }
@@ -39,23 +41,25 @@ class DataKampus extends Controller
     public function edit(string $id): View
     {
         $dks = KampusMahasiswa::findOrFail($id);
-        return view("data_kampus.edit", compact("dks"));
+        return view("admin.data_kampus.edit", compact("dks"));
     }
 
     public function update(Request $request, string $id): RedirectResponse
     {
         $request->validate([
-            "nama_kampus" => "required",
-            "fakultas" => "required",
-            "jurusan" => "required",
+            "nama_kampus"   => "required",
+            "fakultas"      => "required",
+            "jurusan"       => "required",
+            "semester"      => "required",
         ]);
 
         $dks = KampusMahasiswa::findOrFail($id);
 
         $dks->update([
-            "nama_kampus" => $request->nama_kampus,
-            "fakultas" => $request->fakultas,
-            "jurusan" => $request->jurusan,
+            "nama_kampus"   => $request->nama_kampus,
+            "fakultas"      => $request->fakultas,
+            "jurusan"       => $request->jurusan,
+            "semester"      => $request->semester,
         ]);
 
         return redirect()->route("data_kampus.index")->with(["success" => "Data berhasil diubah!"]);

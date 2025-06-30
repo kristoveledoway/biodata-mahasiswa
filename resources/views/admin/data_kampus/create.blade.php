@@ -4,7 +4,7 @@
 <link href="{{ asset('assets/plugins/input-tags/css/tagsinput.css') }}" rel="stylesheet" />
 @endsection
 
-@section('title', 'Tambah Data Mahasiswa')
+@section('title', 'Tambah Data Kampus')
 
 @section('content')
 

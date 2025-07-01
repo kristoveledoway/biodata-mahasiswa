@@ -1,7 +1,8 @@
 @extends('admin.layouts.main')
 
 @section('plugins')
-<link href="assets/plugins/datatable/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+<!--plugins-->
+<link href="{{ asset('assets/plugins/datatable/css/dataTables.bootstrap5.min.css') }}" rel="stylesheet" />
 @endsection
 
 @section('title', 'Data Mahasiswa')
@@ -88,19 +89,5 @@
                         </div>
                     </div>
                 </div>
-@endsection
-
-@section('scripts')
-    <script>
-        $(document).ready(function() {
-            var table = $('#example2').DataTable({
-                lengthChange: false,
-                buttons: ['copy', 'excel', 'pdf', 'print']
-            });
-
-            table.buttons().container()
-                .appendTo('#example2_wrapper .col-md-6:eq(0)');
-        });
-    </script>
 @endsection
     

@@ -107,11 +107,21 @@
                                             </tr>
                                         </tfoot>
                                     </table>
-                                    {{ $dms->links() }}
+                                    {{-- {{ $dms->links() }} --}}
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div><!--End Row-->
 
+@endsection
+
+@section('scripts')
+    <script src="{{ asset('assets/plugins/datatable/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/datatable/js/dataTables.bootstrap5.min.js') }}"></script>
+    <script>
+		$(document).ready(function() {
+			$('#example').DataTable();
+		  } );
+	</script>
 @endsection

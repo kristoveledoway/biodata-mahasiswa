@@ -75,7 +75,7 @@
                             </tr>
                         </tfoot>
                     </table>
-                    {{ $dks->links() }}
+                    {{-- {{ $dks->links() }} --}}
                 </div>
             </div>
         </div>
